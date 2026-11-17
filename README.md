@@ -47,7 +47,38 @@ The starting test suite should pass before you change anything.
 
 ## Exercise
 
-See [TAKE_HOME.md](TAKE_HOME.md) for the instructions.
+Full instructions are in [TAKE_HOME.md](TAKE_HOME.md). Timebox: about 60 minutes.
+
+### What to do
+
+1. Fork this repository and clone your fork.
+2. Run `bin/setup` and `bin/rails test` to confirm the starter works.
+3. Add **Tasks** to Projects (a Project has many Tasks; a Task belongs to one Project).
+4. Commit your work to your fork, add your notes to the sections at the bottom of this README, and send us the URL of your public fork.
+
+### Acceptance criteria
+
+**Required**
+
+- [ ] **Model and database:** a `Task` model with `project_id`, `title`, `status` and `due_date`, using appropriate column types and a database foreign key to `projects`.
+- [ ] **Relationships:** `Project has_many :tasks, dependent: :destroy` and `Task belongs_to :project`. Deleting a project deletes its tasks.
+- [ ] **Validations:** a task requires a title; status is limited to `pending`, `in_progress` and `completed`; a project still requires a name.
+- [ ] **Show page:** `/projects/:id` lists the project's tasks, each with title, status and due date, and the "not implemented yet" placeholder is removed.
+- [ ] **Create task:** the Project page has a form (Title, Status, Due Date). A valid submission shows the new task and keeps the user on the Project page. An invalid submission shows meaningful errors and keeps the entered values where reasonable.
+- [ ] **Mark Complete:** every incomplete task has a **Mark Complete** control that sets its status to `completed` without a full page reload (Turbo, Stimulus, `fetch` or vanilla JS are all fine).
+- [ ] **Styling:** Pending, In Progress and Completed are visually distinct and the list is easy to read.
+- [ ] **Conventions:** RESTful routes and controller actions, strong parameters, `form_with`, path helpers. The existing tests still pass.
+- [ ] **README:** the "millions of tasks" question is answered and any unfinished work is noted.
+
+**Bonus (only after the required items)**
+
+- [ ] Show "3 of 5 tasks completed" on the Project page.
+- [ ] At least one meaningful automated test for the Task functionality.
+- [ ] Sort tasks so incomplete ones appear before completed ones.
+
+**Also**
+
+- [ ] If you used AI tools, say which and what for. Be ready to explain all of your code in the follow-up interview.
 
 ---
 
