@@ -45,6 +45,8 @@ due_date
 
 Use appropriate Rails data types.
 
+The due date is optional: a task can be created without one, and the task list should handle that gracefully.
+
 Relationships should be:
 
 ```ruby

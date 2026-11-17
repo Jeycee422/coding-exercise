@@ -60,7 +60,7 @@ Full instructions are in [TAKE_HOME.md](TAKE_HOME.md). Timebox: about 60 minutes
 
 **Required**
 
-- [ ] **Model and database:** a `Task` model with `project_id`, `title`, `status` and `due_date`, using appropriate column types and a database foreign key to `projects`.
+- [ ] **Model and database:** a `Task` model with `project_id`, `title`, `status` and `due_date`, using appropriate column types and a database foreign key to `projects`. The due date is optional.
 - [ ] **Relationships:** `Project has_many :tasks, dependent: :destroy` and `Task belongs_to :project`. Deleting a project deletes its tasks.
 - [ ] **Validations:** a task requires a title; status is limited to `pending`, `in_progress` and `completed`; a project still requires a name.
 - [ ] **Show page:** `/projects/:id` lists the project's tasks, each with title, status and due date, and the "not implemented yet" placeholder is removed.
