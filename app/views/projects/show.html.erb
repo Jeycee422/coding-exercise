@@ -1,0 +1,25 @@
+<% content_for :title, @project.name %>
+
+<article>
+  <h1><%= @project.name %></h1>
+
+  <% if @project.description.present? %>
+    <p><%= @project.description %></p>
+  <% end %>
+
+  <section class="tasks">
+    <h2>Tasks</h2>
+    <p class="notice-box">
+      Tasks have not been implemented yet as part of the starter application.
+      <br>
+      See <code>TAKE_HOME.md</code> for the coding exercise.
+    </p>
+  </section>
+
+  <div class="actions">
+    <%= link_to "Edit Project", edit_project_path(@project), class: "button" %>
+    <%= link_to "Back to Projects", projects_path, class: "button button-secondary" %>
+    <%= button_to "Delete Project", @project, method: :delete, class: "button button-danger",
+          form: { data: { turbo_confirm: "Delete this project?" } } %>
+  </div>
+</article>

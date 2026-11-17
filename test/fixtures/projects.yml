@@ -1,0 +1,7 @@
+customer_portal:
+  name: Customer Portal
+  description: Customer-facing account and billing application.
+
+internal_operations:
+  name: Internal Operations
+  description: Internal staff workflow tools.

@@ -1,0 +1,6 @@
+<li class="project-list-item" id="<%= dom_id(project) %>">
+  <h2><%= link_to project.name, project %></h2>
+  <% if project.description.present? %>
+    <p><%= project.description %></p>
+  <% end %>
+</li>

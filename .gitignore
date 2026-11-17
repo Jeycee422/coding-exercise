@@ -1,0 +1,31 @@
+# Ignore bundler config and vendored gems.
+/.bundle
+/vendor/bundle
+
+# Ignore all environment files and local secrets.
+/.env*
+!/.env.example
+/config/master.key
+/config/*.key
+
+# Ignore logs, temp files and uploads.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+/tmp/pids/*
+!/tmp/pids/.keep
+/storage/*
+!/storage/.keep
+
+# Ignore compiled assets.
+/public/assets
+
+# Node (not used, but guard against accidental installs).
+/node_modules
+
+# Editor / OS files.
+.DS_Store
+.idea/
+.vscode/
+*.swp

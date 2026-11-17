@@ -1,0 +1,26 @@
+<%= form_with model: project do |form| %>
+  <% if project.errors.any? %>
+    <div class="errors" role="alert">
+      <h2><%= pluralize(project.errors.count, "error") %> prevented this project from being saved:</h2>
+      <ul>
+        <% project.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, rows: 4 %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "button" %>
+  </div>
+<% end %>
