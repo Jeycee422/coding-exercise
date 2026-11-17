@@ -9,11 +9,46 @@
 
   <section class="tasks">
     <h2>Tasks</h2>
-    <p class="notice-box">
-      Tasks have not been implemented yet as part of the starter application.
-      <br>
-      See <code>TAKE_HOME.md</code> for the coding exercise.
-    </p>
+
+<ul class="tasks">
+  <% @project.tasks.select(&:persisted?).each do |task| %>
+    <li class="task task--<%= task.status %>">
+      <span class="task__title"><%= task.title %></span>
+      <% if task.due_date %>
+        <small>Due <%= task.due_date.strftime("%b %d, %Y") %></small>
+      <% end %>
+      <span class="task__status"><%= task.status.titleize %></span>
+
+      <% unless task.status == "completed" %>
+        <%= button_to "Mark Complete", project_task_path(@project, task), method: :patch %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
+<h3>Add a task</h3>
+
+<%= form_with model: [@project, @task] do |form| %>
+  <% if @task.errors.any? %>
+    <ul class="errors">
+      <% @task.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :due_date %>
+    <%= form.date_field :due_date %>
+  </div>
+
+  <%= form.submit "Add task" %>
+<% end %>
   </section>
 
   <div class="actions">

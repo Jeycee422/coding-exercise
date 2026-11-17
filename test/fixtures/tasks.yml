@@ -1,0 +1,21 @@
+write_spec:
+  project: customer_portal
+  title: Write billing page spec
+  status: pending
+  due_date: 2026-12-01
+
+build_login:
+  project: customer_portal
+  title: Build login form
+  status: in_progress
+
+setup_repo:
+  project: customer_portal
+  title: Set up repository
+  status: completed
+  due_date: 2026-11-10
+
+onboard_staff:
+  project: internal_operations
+  title: Onboard new staff tool
+  status: pending

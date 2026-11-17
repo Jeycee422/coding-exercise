@@ -140,3 +140,8 @@ input[type="submit"]:hover { background: var(--primary-dark); }
 
 .errors h2 { margin: 0 0 0.5rem; font-size: 1rem; }
 .errors ul { margin: 0; padding-left: 1.25rem; }
+
+.task { display: flex; gap: .75rem; align-items: center; padding: .5rem; border-left: 4px solid #f59e0b; }
+.task--completed { border-left-color: #16a34a; opacity: .7; }
+.task--completed .task__title { text-decoration: line-through; }
+.errors { color: #b91c1c; }
